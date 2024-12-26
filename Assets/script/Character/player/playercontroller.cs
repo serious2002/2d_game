@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     public InputActions inputActions;
     public Vector2 inputDirection;
 
+    public void PlayerHurt()
+    {
+
+    }
 
     private void FixedUpdate()
     {
@@ -19,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputDirection = inputActions.GamePlay.Move.ReadValue<Vector2>();
+        Debug.Log(inputDirection);
     }
 
     private void Awake()
