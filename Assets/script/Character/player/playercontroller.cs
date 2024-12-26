@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputDirection = inputActions.GamePlay.Move.ReadValue<Vector2>();
-        Debug.Log(inputDirection);
+
     }
 
     private void Awake()
