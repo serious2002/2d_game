@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     public InputActions inputActions;
     public Vector2 inputDirection;
 
+    public void PlayerHurt()
+    {
+        
+    }
 
     private void FixedUpdate()
     {
