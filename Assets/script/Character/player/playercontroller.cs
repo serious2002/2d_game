@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject Bullet;
+    public float playerdamage=20;
     public float bulletspeed=10;
     public float moveSpeed;
     private Rigidbody2D rb;
@@ -30,11 +31,19 @@ public class PlayerController : MonoBehaviour
         if (shootDirection != new Vector2(0.00f, 0.00f) && Time.time >= lastShootTime + shootInterval)
         {
             lastShootTime = Time.time;
-            GameObject newBullet = GameObject.Instantiate(bullet, transform.position, transform.rotation);
+            
+            GameObject newBullet = GameObject.Instantiate(Bullet, transform.position, transform.rotation);
             Rigidbody2D bulletRigidbody= newBullet.GetComponent<Rigidbody2D>();
             bulletRigidbody.velocity = shootDirection * bulletspeed;
+
+            // 获取子弹的 Bullet 脚本组件并修改伤害值
+            if (newBullet.TryGetComponent<bullet>(out var bulletScript))
+            {
+                bulletScript.damage = playerdamage;  // 修改子弹的伤害值
+            }
         }
     }
+    
 
     void Update()
     {
