@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-1.png.meta
 guid: 9734441952e7db948b2bf6cbb56ae39a
+========
+guid: 44dfbd4f91128ea47966e4dbbe80a00c
+>>>>>>>> e0d69043f420a9ce7a02671adae6f91a35420d46:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-3.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
