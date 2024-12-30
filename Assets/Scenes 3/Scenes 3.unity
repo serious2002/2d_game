@@ -408,11 +408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 331572568653769310, guid: ed061f7d3bc98d845a8540a076646fa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.72436786
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 331572568653769310, guid: ed061f7d3bc98d845a8540a076646fa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.3375077
+      value: -5.12
       objectReference: {fileID: 0}
     - target: {fileID: 331572568653769310, guid: ed061f7d3bc98d845a8540a076646fa7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12050,7 +12050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac36f4e35899c64eb48316ed8b74203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8883011420430141098, guid: 56d467e9b5dfc2442bf206e8386af0d8, type: 3}
+  Bullet: {fileID: 8883011420430141098, guid: 56d467e9b5dfc2442bf206e8386af0d8, type: 3}
+  playerdamage: 20
   bulletspeed: 10
   moveSpeed: 5
   inputDirection: {x: 0, y: 0}
@@ -12096,7 +12097,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

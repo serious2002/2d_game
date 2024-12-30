@@ -5,6 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float lifetime;
+    public float damage=20;
     private float shoottime;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,11 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    public void Changedamage(float x)
+    {
+        damage = x;
     }
 
 
