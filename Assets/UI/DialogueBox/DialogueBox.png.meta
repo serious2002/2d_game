@@ -1,17 +1,9 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/UI/DialogueBox/DialogueBox.png.meta
 guid: b96e65e66e5ce2f48b4b1994d7c66041
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
-========
-guid: 9734441952e7db948b2bf6cbb56ae39a
-TextureImporter:
-  internalIDToNameTable: []
-  externalObjects: {}
-  serializedVersion: 12
->>>>>>>> e0d69043f420a9ce7a02671adae6f91a35420d46:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-1.png.meta
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -33,11 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-<<<<<<<< HEAD:Assets/UI/DialogueBox/DialogueBox.png.meta
   ignoreMipmapLimit: 0
-========
-  ignoreMasterTextureLimit: 0
->>>>>>>> e0d69043f420a9ce7a02671adae6f91a35420d46:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-1.png.meta
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -76,19 +64,12 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-<<<<<<<< HEAD:Assets/UI/DialogueBox/DialogueBox.png.meta
   swizzle: 50462976
-========
->>>>>>>> e0d69043f420a9ce7a02671adae6f91a35420d46:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-1.png.meta
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-<<<<<<<< HEAD:Assets/UI/DialogueBox/DialogueBox.png.meta
     maxTextureSize: 1024
-========
-    maxTextureSize: 256
->>>>>>>> e0d69043f420a9ce7a02671adae6f91a35420d46:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-1.png.meta
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -112,18 +93,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -138,11 +107,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable: {}
-<<<<<<<< HEAD:Assets/UI/DialogueBox/DialogueBox.png.meta
   mipmapLimitGroupName: 
-========
-  spritePackingTag: 
->>>>>>>> e0d69043f420a9ce7a02671adae6f91a35420d46:Assets/2DTopDownGames04/Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-left/hero-walk-side-1.png.meta
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
