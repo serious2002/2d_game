@@ -6,9 +6,11 @@ public class Enemy : Character
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.name == "bullet(Clone)")
         {
-            Debug.Log("Íæ¼ÒµôÑª");
+            TakeDamage(20);
+            Destroy(collision.gameObject);
+            Debug.Log(currentHealth);
         }
     }
 }
