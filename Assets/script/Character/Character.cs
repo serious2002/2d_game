@@ -5,10 +5,10 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [Header(" Ù–‘")]
-    [SerializeField] protected float maxHealth;
+    [SerializeField] protected float maxHealth=100;
 
 
-    [SerializeField] protected float currentHealth;
+    [SerializeField] protected float currentHealth=100;
 
     protected virtual void OnEnable()
     {

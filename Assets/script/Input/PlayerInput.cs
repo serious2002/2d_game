@@ -46,6 +46,6 @@ public class PlayerInput : ScriptableObject,InputActions.IGamePlayActions
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        
     }
 }
