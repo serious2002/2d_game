@@ -37,7 +37,7 @@ public class Player : Character
 
     public void Move(Vector2 moveInput)
     {
-        Debug.Log(moveInput);
+        
     }
 
 }

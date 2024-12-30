@@ -44,5 +44,8 @@ public class PlayerInput : ScriptableObject,InputActions.IGamePlayActions
         inputActions.GamePlay.Enable();//启用Gameplay动作表
     }
 
-
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        
+    }
 }
