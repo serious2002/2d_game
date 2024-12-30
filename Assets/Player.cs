@@ -7,6 +7,7 @@ public class Player : Character
     //单例模式
     public static Player Instance {  get; private set; }
 
+
     [Header("获取玩家输入")]
     public PlayerInput input;
 
@@ -37,7 +38,7 @@ public class Player : Character
 
     public void Move(Vector2 moveInput)
     {
-        Debug.Log(moveInput);
+        
     }
 
 }
