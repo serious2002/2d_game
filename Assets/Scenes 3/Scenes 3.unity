@@ -12050,7 +12050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac36f4e35899c64eb48316ed8b74203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8883011420430141098, guid: 56d467e9b5dfc2442bf206e8386af0d8, type: 3}
+  Bullet: {fileID: 8883011420430141098, guid: 56d467e9b5dfc2442bf206e8386af0d8, type: 3}
+  playerdamage: 20
   bulletspeed: 10
   moveSpeed: 5
   inputDirection: {x: 0, y: 0}

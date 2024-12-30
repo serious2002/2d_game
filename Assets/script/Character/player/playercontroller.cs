@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     public GameObject Bullet;
     public float playerdamage=20;
     public float bulletspeed=10;
-    public float moveSpeed;
+    public float moveSpeed=5;
     private Rigidbody2D rb;
+    Animator animator;
     public InputActions inputActions;
     public Vector2 inputDirection;
     public Vector2 shootDirection;
+    Vector2 moveDirection;
 
     [Header("射击间隔时间")]
     public float shootInterval = 0.5f;  // 发射子弹的间隔，单位秒
@@ -27,6 +29,14 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = inputDirection * moveSpeed;
+
+
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        animator.SetFloat("Horizontal", moveX);
+        animator.SetFloat("Vertical", moveY);
+        animator.SetFloat("Speed", inputDirection.sqrMagnitude);
 
         if (shootDirection != new Vector2(0.00f, 0.00f) && Time.time >= lastShootTime + shootInterval)
         {
@@ -55,6 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         inputActions = new InputActions();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
