@@ -20,7 +20,7 @@ public class Player : Character
     private void Awake()
     {
         Instance = this;
-
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         input.EnableGameplayeInput();
     }
@@ -39,6 +39,28 @@ public class Player : Character
     public void Move(Vector2 moveInput)
     {
         
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "bullet(Clone)")
+        {
+            bullet bullet = collision.gameObject.GetComponent<bullet>();
+            if (bullet.is_enemy)
+            {
+                if (bullet != null)
+                {
+                    // 读取子弹的 Damage 属性并计算伤害
+                    TakeDamage(bullet.damage);
+
+                    // 销毁子弹
+                    Destroy(collision.gameObject);
+
+                    // 输出当前生命值
+                    Debug.Log(currentHealth);
+                }
+            }
+        }
     }
 
 }

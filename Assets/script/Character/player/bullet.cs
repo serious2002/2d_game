@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour
     public float lifetime;
     public float damage=20;
     private float shoottime;
+    public bool is_enemy = false;
     // Start is called before the first frame update
     void Start()
     {
