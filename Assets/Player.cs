@@ -12,8 +12,45 @@ public class Player : Character
     public PlayerInput input;
 
     [Header("近战攻击")]
+    public float meleeAttackDamage;
 
-    [Header("远程攻击")]
+    public Vector2 attackSize = new Vector2(1f, 1f); // 攻击范围的尺寸
+    public float offsetX = 0.76f; // X轴的偏移量
+    public float offsetY = 0.26f; // Y轴的偏移量
+    private Vector2 AttackAreaPos;
+    private SpriteRenderer SpriteRenderer;
+    public LayerMask enemyLayer;
+
+    void MeleeAttackAnimEvent()
+    {
+        // 中心偏移量
+        AttackAreaPos = transform.position;
+
+        // 是否翻转
+        offsetX = spriteRenderer.flipX ? -Mathf.Abs(offsetX) : Mathf.Abs(offsetX);
+
+        AttackAreaPos.x += offsetX;
+        AttackAreaPos.y += offsetY;
+
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(AttackAreaPos, attackSize, 0f,enemyLayer);
+
+        foreach (Collider2D hitCollider in hitColliders)
+        {
+            hitCollider.GetComponent<Character>()?.TakeDamage(meleeAttackDamage * 1);
+        }
+    }
+
+
+    // 绘图用于测试
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(AttackAreaPos, attackSize);
+    }
+
+
+
+[Header("远程攻击")]
 
 
     private SpriteRenderer spriteRenderer;

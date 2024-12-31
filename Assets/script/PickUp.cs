@@ -11,9 +11,10 @@ public class PickUp : MonoBehaviour
         PropManager manager = collision.GetComponent<PropManager>();
         if (manager)
         {
-           bool pickedUp =manager.PickupItem(gameObject);
+            bool pickedUp = manager.PickupItem(gameObject);
 
-            if (pickedUp) {
+            if (pickedUp)
+            {
                 RemoveItem();
             }
         }
@@ -21,7 +22,7 @@ public class PickUp : MonoBehaviour
 
     private void RemoveItem()
     {
-        AudioSource.PlayClipAtPoint(SFX,transform.position);
+        AudioSource.PlayClipAtPoint(SFX, transform.position);
         Instantiate(VFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
