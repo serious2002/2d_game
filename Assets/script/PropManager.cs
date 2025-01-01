@@ -38,7 +38,7 @@ public class PropManager : MonoBehaviour
 
         GUI.Label(new Rect(20, 20, 300, 40), "Coin Num: " + coinCount);
         GUI.Label(new Rect(20, 70, 300, 40), "Equipment Num: " + equipmentCount);
-        GUI.Label(new Rect(20, 120, 300, 40), "Key Num: " + keyCount);
+        GUI.Label(new Rect(20, 120, 300, 40), "Key Num: " + (keyCount-1));
         GUI.Label(new Rect(20, 170, 300, 40), "Potion Num: " + potionCount);
 
     }
