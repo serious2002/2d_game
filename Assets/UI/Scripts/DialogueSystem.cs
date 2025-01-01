@@ -2,6 +2,7 @@
  * 文件说明：通过读取对话文件，显示多段对话
  * 该文件搭载在对话框上
  * 对话文件为txt，注意分段，导出时注意编码方式为UTF-8
+ * 使用时，将对话文件拖入textFile，将对话框包含的text子对象拖入textLabel
  */
 
 using System.Collections;
