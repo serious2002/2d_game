@@ -18,7 +18,8 @@ public class DialogueSystem : MonoBehaviour
     public TextAsset textFile;
     public int index;
     public float textSpeed; //文字显示速度
-
+    public GameObject npc;
+    public GameObject player;
     bool textFinished;
 
     List<string> textList = new List<string>();
@@ -43,6 +44,11 @@ public class DialogueSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
+            if (npc != null)
+            {
+                npc.GetComponent<PlayerMovement>().isControllable = true;
+                player.GetComponent<Player>().isAutoReduceHealth = true;
+            }
             return;
         }
         //单段对话结束
