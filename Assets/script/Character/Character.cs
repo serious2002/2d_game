@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public GameObject keyPrefab;
     [Header("属性")]
     [SerializeField] protected float maxHealth=100;
 
@@ -29,5 +30,21 @@ public class Character : MonoBehaviour
     {
         currentHealth = 0f;
         Destroy(this.gameObject);
+        if (gameObject.name == "EnemySence1")
+        {
+            DropKey();
+        }
     }
+
+    private void DropKey()
+    {
+        if (keyPrefab != null)
+        {
+            // 如果设置了掉落点，则在掉落点生成钥匙；否则在敌人当前位置生成
+            Vector3 dropPosition = transform.position;
+            Instantiate(keyPrefab, dropPosition, Quaternion.identity);
+            Debug.Log("钥匙已掉落！");
+        }
+    }
+
 }
