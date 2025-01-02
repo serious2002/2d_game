@@ -6,15 +6,27 @@ public class Character : MonoBehaviour
 {
     public GameObject keyPrefab;
     [Header("属性")]
-    [SerializeField] protected float maxHealth=100;
+    [SerializeField] public float maxHealth=100;
 
 
-    [SerializeField] protected float currentHealth=100;
+    [SerializeField] public float currentHealth=100;
 
     protected virtual void OnEnable()
     {
         currentHealth=maxHealth;
     }
+
+    public virtual void RestoreHealth(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth; // 确保血量不会超过最大值
+        }
+
+        Debug.Log($"血量恢复：{amount}，当前血量：{currentHealth}/{maxHealth}");
+    }
+
 
     public virtual void TakeDamage(float damage)
     {

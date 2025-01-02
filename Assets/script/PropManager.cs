@@ -9,6 +9,10 @@ public class PropManager : MonoBehaviour
     public int keyCount;
     public int potionCount;
 
+    [Header("玩家组件")]
+    public Player player; // 玩家脚本，用于加血操作
+    public float potionHealAmount = 20f; // 药瓶恢复的血量
+
     public bool PickupItem(GameObject obj)
     {
         switch (obj.tag)
@@ -61,6 +65,15 @@ public class PropManager : MonoBehaviour
     private void PickUpPotion()
     {
          potionCount++;
+        if (player != null)
+        {
+            player.RestoreHealth(potionHealAmount);
+            Debug.Log($"使用药瓶恢复血量：{potionHealAmount}，当前血量：{player.currentHealth}/{player.maxHealth}");
+        }
+        else
+        {
+            Debug.LogWarning("未绑定玩家脚本，无法恢复血量！");
+        }
     }
 
 
