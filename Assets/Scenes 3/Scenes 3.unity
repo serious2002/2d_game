@@ -23395,7 +23395,7 @@ PrefabInstance:
       objectReference: {fileID: 67808336}
     - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: enemyWaves.Array.data[0].enemies.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: enemyWaves.Array.data[1].enemies.Array.size
@@ -23587,7 +23587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5818100854710143245, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.023836372
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5818100854710143245, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23716,7 +23716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366cb447fb0cb664b9f2386f057a72eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  Bullet: {fileID: 8883011420430141098, guid: 56d467e9b5dfc2442bf206e8386af0d8, type: 3}
 --- !u!212 &1852318293
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23799,6 +23799,13 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   input: {fileID: 11400000, guid: d9b086bc2d04c5a459095f093fd17e63, type: 2}
+  meleeAttackDamage: 0
+  attackSize: {x: 1, y: 1}
+  offsetX: 0.76
+  offsetY: 0.26
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &1852318296
 BoxCollider2D:
   m_ObjectHideFlags: 0
