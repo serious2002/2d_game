@@ -45,7 +45,7 @@ public class DialogueBox : MonoBehaviour
         if(playerNpc == true && Input.GetKeyDown(KeyCode.E))
         {
             //
-            nameText.text = npcName;
+            //nameText.text = npcName;
             //
             dialogueBox.SetActive(true);
         }

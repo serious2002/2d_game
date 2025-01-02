@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
-    //单例模式
-    public static Player Instance {  get; private set; }
-
+    // 单例模式
+    public static Player Instance { get; private set; }
 
     [Header("获取玩家输入")]
     public PlayerInput input;
@@ -18,8 +18,72 @@ public class Player : Character
     public float offsetX = 0.76f; // X轴的偏移量
     public float offsetY = 0.26f; // Y轴的偏移量
     private Vector2 AttackAreaPos;
-    private SpriteRenderer SpriteRenderer;
+    private SpriteRenderer spriteRenderer;
     public LayerMask enemyLayer;
+
+    [Header("实时扣血设置")]
+    public bool isAutoReduceHealth = false; // 是否实时扣血
+    public float healthReductionSpeed = 1f; // 扣血速度（每秒扣血量）
+    private float timeSinceLastReduction = 0f; // 距离上次扣血的时间
+
+    [Header("UI设置")]
+    public GUIStyle healthStyle; // 血量显示样式
+    public GUIStyle taskFailedStyle; // 任务失败样式
+
+    private bool isTaskFailed = false; // 任务失败标记
+
+    private void Awake()
+    {
+        Instance = this;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        input.EnableGameplayeInput();
+
+        // 初始化样式
+        healthStyle = new GUIStyle();
+        healthStyle.fontSize = 30;
+        healthStyle.normal.textColor = Color.black;
+
+        taskFailedStyle = new GUIStyle();
+        taskFailedStyle.fontSize = 50;
+        taskFailedStyle.alignment = TextAnchor.MiddleCenter;
+        taskFailedStyle.normal.textColor = Color.red;
+    }
+
+    private void Update()
+    {
+        // 自动扣血逻辑
+        if (isAutoReduceHealth)
+        {
+            timeSinceLastReduction += Time.deltaTime;
+            if (timeSinceLastReduction >= 1f) // 每秒扣血一次
+            {
+                TakeDamage(healthReductionSpeed);
+                timeSinceLastReduction = 0f;
+            }
+        }
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+
+        // 检查血量是否小于等于 0
+        if (currentHealth <= 0 && !isTaskFailed)
+        {
+            TaskFailed();
+        }
+    }
+
+    private void TaskFailed()
+    {
+        isTaskFailed = true;
+    }
+
+    public override void RestoreHealth(float amount)
+    {
+        base.RestoreHealth(amount); // 调用父类逻辑
+    }
 
     void MeleeAttackAnimEvent()
     {
@@ -32,7 +96,7 @@ public class Player : Character
         AttackAreaPos.x += offsetX;
         AttackAreaPos.y += offsetY;
 
-        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(AttackAreaPos, attackSize, 0f,enemyLayer);
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(AttackAreaPos, attackSize, 0f, enemyLayer);
 
         foreach (Collider2D hitCollider in hitColliders)
         {
@@ -40,26 +104,11 @@ public class Player : Character
         }
     }
 
-
     // 绘图用于测试
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(AttackAreaPos, attackSize);
-    }
-
-
-
-[Header("远程攻击")]
-
-
-    private SpriteRenderer spriteRenderer;
-    private void Awake()
-    {
-        Instance = this;
-        
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        input.EnableGameplayeInput();
     }
 
     protected override void OnEnable()
@@ -75,29 +124,16 @@ public class Player : Character
 
     public void Move(Vector2 moveInput)
     {
-        
+        // 玩家移动逻辑
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnGUI()
     {
-        if (collision.name == "bullet(Clone)")
-        {
-            bullet bullet = collision.gameObject.GetComponent<bullet>();
-            if (bullet.is_enemy)
-            {
-                if (bullet != null)
-                {
-                    // 读取子弹的 Damage 属性并计算伤害
-                    TakeDamage(bullet.damage);
+        // 显示血量
+        GUI.Label(new Rect(200, 20, 300, 50), $"血量：{currentHealth}/{maxHealth}", healthStyle);
 
-                    // 销毁子弹
-                    Destroy(collision.gameObject);
 
-                    // 输出当前生命值
-                    Debug.Log(currentHealth);
-                }
-            }
-        }
+
+
     }
-
 }
