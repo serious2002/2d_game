@@ -8,6 +8,13 @@ public class CrossHair : MonoBehaviour
     public GameObject Bullet;
     public InputActions inputActions;
     private float lastShootTime = 0f;  // 记录上次发射子弹的时间
+    public GameObject Success;
+    [Header("UI设置")]
+    public GUIStyle taskStyle; // 任务结果显示样式
+
+    private string taskMessage = ""; // 任务结果信息
+    private bool showTaskMessage = false; // 是否显示任务结果
+    private bool isTaskCompleted = false; // 标记任务是否已经完成（成功或失败）
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +46,28 @@ public class CrossHair : MonoBehaviour
         }
 
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "Success" && !isTaskCompleted)
+        {
+            TaskSuccess();
+        }
+    }
+    private void TaskSuccess()
+    {
+        taskMessage = "任务成功！";
+        taskStyle.normal.textColor = Color.green; // 设置成功为绿色
+        showTaskMessage = true;
+        isTaskCompleted = true; // 标记任务已完成
 
+        Debug.Log("任务成功！");
+    }
+    private void OnGUI()
+    {
+        if (showTaskMessage)
+        {
+            // 显示任务结果在屏幕中央
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 25, 300, 50), taskMessage, taskStyle);
+        }
+    }
 }
