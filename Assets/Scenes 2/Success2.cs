@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SuccessPanel : MonoBehaviour
+public class Success2 : MonoBehaviour
 {
     public GameObject SuccessFlag;
     public GameObject FailFlag;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Success : MonoBehaviour
+public class Success3 : MonoBehaviour
 {
     public GameObject goal;
     // Start is called before the first frame update
