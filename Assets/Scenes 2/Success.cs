@@ -7,8 +7,8 @@ public class SuccessPanel : MonoBehaviour
 {
     public GameObject SuccessFlag;
     public GameObject FailFlag;
-    public int LimitedTime = 1000;  //通关限制时间
     public Lifebar Lifebar;
+    public int LimitedTime = 5000;  //通关限制时间,50单位相当于1s
     public int Duration;
     public bool GetInfo = false;
     void Start()
@@ -17,7 +17,7 @@ public class SuccessPanel : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         Duration++;
         if (Duration > LimitedTime || Lifebar.sli.value == 0)  //超时或者死亡游戏结束
