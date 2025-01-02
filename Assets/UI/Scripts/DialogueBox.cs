@@ -23,7 +23,7 @@ public class DialogueBox : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             //
-            nameText.text = npcName;
+            //nameText.text = npcName;
             //
             dialogueBox.SetActive(true);
         }
