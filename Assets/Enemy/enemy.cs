@@ -1,25 +1,25 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.UIElements;
-//using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.Events;
 
-//public class enemy : MonoBehaviour
-//{
-//    public UnityEvent<Vector2> OnMovementInput;
+public class enemy : MonoBehaviour
+{
+    public UnityEvent<Vector2> OnMovementInput;
 
-//    public UnityEvent<Vector2> OnAttack;
+    public UnityEvent<Vector2> OnAttack;
     
-//    [SerializeField] private Transform : player
-//    [SerializeField] private float chaseDistance = 3f; //×·»÷¾àÀë
+    [SerializeField] private Transform : player
+    [SerializeField] private float chaseDistance = 3f; //×·»÷¾àÀë
 
-//    [SerializeField] private float attackDistance = 3f; //¹¥»÷¾àÀë
+    [SerializeField] private float attackDistance = 3f; //¹¥»÷¾àÀë
 
-//    private void Update()
-//    {
-//        if (player = null)
-//            return;
-//        float distance = Vector2 Distance(Player: position.transfom position);
+    private void Update()
+    {
+        if (player = null)
+            return;
+        float distance = Vector2 Distance(Player: position.transfom position);
 
 //        if(distance <= chaseDistance)//ÅÐ¶ÏÓëÍæ¼ÒµÄ¾àÀëÊÇ·ñÐ¡ÓÚµÈÓÚ×·»÷·¶Î§
 //        {
