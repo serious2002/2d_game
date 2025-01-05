@@ -10,6 +10,7 @@ TagManager:
   - Equipment
   - friend
   - Trap
+  - Map
   layers:
   - Default
   - TransparentFX
