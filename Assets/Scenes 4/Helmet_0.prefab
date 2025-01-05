@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7982326977145003892}
   - component: {fileID: 2538006971804100359}
   - component: {fileID: 1259003521640118522}
+  - component: {fileID: 265598907528029899}
   m_Layer: 0
   m_Name: Helmet_0
   m_TagString: Trap
@@ -192,3 +193,24 @@ MonoBehaviour:
   Bullet: {fileID: 0}
   enemydamage: 20
   bulletspeed: 10
+--- !u!95 &265598907528029899
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415773274532094066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e66304e60dd4d03498dcf6240feb9720, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
