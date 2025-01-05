@@ -8,9 +8,9 @@ public class Success2 : MonoBehaviour
     public GameObject SuccessFlag;
     public GameObject FailFlag;
     public Lifebar Lifebar;
-    public int LimitedTime = 5000;  //通关限制时间,50单位相当于1s
+    public int LimitedTime = 1000;  //通关限制时间,50单位相当于1s
     public int Duration;
-    public Vector2 targetPosition = new Vector2(5.5f, -1.5f);
+    public Vector2 targetPosition = new Vector2(-9.5f, -3f);
     public float tolerance = 0.5f;
     void Start()
     {
