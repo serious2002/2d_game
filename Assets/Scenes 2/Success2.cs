@@ -10,7 +10,8 @@ public class Success2 : MonoBehaviour
     public Lifebar Lifebar;
     public int LimitedTime = 5000;  //通关限制时间,50单位相当于1s
     public int Duration;
-    public bool GetInfo = false;
+    public Vector2 targetPosition = new Vector2(5.5f, -1.5f);
+    public float tolerance = 0.5f;
     void Start()
     {
         Duration = 0;
@@ -20,11 +21,12 @@ public class Success2 : MonoBehaviour
     private void FixedUpdate()
     {
         Duration++;
+        float distance = Vector2.Distance(transform.position, targetPosition);
         if (Duration > LimitedTime || Lifebar.sli.value == 0)  //超时或者死亡游戏结束
         {
             FailFlag.SetActive(true);
         }
-        if (GetInfo)//拿到兵力部署图
+        if (distance<tolerance)//拿到兵力部署图
         {
             SuccessFlag.SetActive(true);
         }
