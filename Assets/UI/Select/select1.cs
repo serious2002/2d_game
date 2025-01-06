@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class select1 : MonoBehaviour
 {
-    public void StartMenu()
+    public void S1()
     {
         SceneManager.LoadScene(1);
     }

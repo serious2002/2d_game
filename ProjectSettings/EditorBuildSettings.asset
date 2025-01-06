@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes 4/scene 4.unity
     guid: 36887ce5ec7aaf445b3451d8136dc972
+  - enabled: 1
+    path: Assets/UI/Select/Select.unity
+    guid: d4a57242f443a2544a3ad2400dc53406
   m_configObjects: {}
