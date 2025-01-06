@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1174095615824870495, guid: 8ca8f4d43b6a6b24a8a04d0d3273364a, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: a7ec71df1bc1652489cbe93217ddecef, type: 3}
+    - target: {fileID: 1174095615824870495, guid: 8ca8f4d43b6a6b24a8a04d0d3273364a, type: 3}
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
@@ -314,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 665190257}
-  targetSceneName: scene_test2
+  targetSceneName: sence1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
