@@ -9,4 +9,5 @@ public static class Constants
     public const string TAG_EQUIPMENT = "Equipment";
     public const string TAG_KEY = "Key";
     public const string TAG_POTION = "Potion";
+    public const string TAG_MAP = "Map";
 }

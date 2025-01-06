@@ -81,7 +81,7 @@ public class PropManager : MonoBehaviour
 
     private void PickUpMap()
     {
-        
+
     }
 
 }
