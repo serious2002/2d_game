@@ -16,7 +16,7 @@ public class VideoPlayerSceneLoader : MonoBehaviour
     {
         Debug.Log("视频播放完毕，即将跳转场景！");
         // 视频播放结束后，停止视频播放
-        videoPlayer.Stop();
+
         // 跳转到指定的场景
         UnityEngine.SceneManagement.SceneManager.LoadScene(targetSceneName);
     }
