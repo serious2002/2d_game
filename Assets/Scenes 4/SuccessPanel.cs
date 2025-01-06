@@ -18,7 +18,7 @@ public class SuccessPanel : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        if (EnemyManager.Instance.enemyCount == 0 && EnemyManager.Instance.currentWaveIndex >= 2)
+        if (EnemyManager_4.Instance.enemyCount == 0 && EnemyManager_4.Instance.currentWaveIndex >= 2)
         {
             UISuccessPanel.SetActive(true);
         }

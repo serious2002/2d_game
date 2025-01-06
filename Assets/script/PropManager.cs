@@ -30,6 +30,9 @@ public class PropManager : MonoBehaviour
             case Constants.TAG_POTION:
                 PickUpPotion();
                 return true;
+            case Constants.TAG_MAP:
+                PickUpMap();
+                return true;
             default:
                 Debug.Log("≤ªø… ∞»°");
                 return false;
@@ -76,6 +79,10 @@ public class PropManager : MonoBehaviour
         }
     }
 
+    private void PickUpMap()
+    {
+
+    }
 
 }
 
