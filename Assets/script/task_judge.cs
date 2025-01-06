@@ -6,6 +6,7 @@ public class GoalFlag : MonoBehaviour
 {
     [Header("玩家引用")]
     public GameObject player; // 玩家对象，需在 Inspector 中拖拽引用
+    public bool use_fail = false;
 
     [Header("UI设置")]
     public GUIStyle taskStyle; // 任务结果显示样式
@@ -13,6 +14,7 @@ public class GoalFlag : MonoBehaviour
     private string taskMessage = ""; // 任务结果信息
     private bool showTaskMessage = false; // 是否显示任务结果
     private bool isTaskCompleted = false; // 标记任务是否已经完成（成功或失败）
+    
 
     private void Start()
     {
@@ -26,10 +28,12 @@ public class GoalFlag : MonoBehaviour
     private void Update()
     {
         // 实时检测玩家是否被销毁
-        if (player == null && !isTaskCompleted)
-        {
-            TaskFailed(); // 玩家已被销毁，任务失败
-        }
+        
+        if (player == null && !isTaskCompleted && use_fail)
+            {
+                TaskFailed(); // 玩家已被销毁，任务失败
+            }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,7 +51,11 @@ public class GoalFlag : MonoBehaviour
         taskStyle.normal.textColor = Color.green; // 设置成功为绿色
         showTaskMessage = true;
         isTaskCompleted = true; // 标记任务已完成
-        
+        BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
+        if (backgroundMusicManager != null)
+        {
+            backgroundMusicManager.StopMusic();
+        }
         Debug.Log("任务成功！");
     }
 
