@@ -29030,6 +29030,29 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &542953230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626238268670970564, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+  m_PrefabInstance: {fileID: 1487897828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &542953231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542953230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6d14ab29c9bd64b8e2a0ca84ce202c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: []
+  patrolPoints: []
+  enemyWaves: []
+  currentWaveIndex: 0
+  enemyCount: 0
+  refresh: 1
 --- !u!1 &546924482
 GameObject:
   m_ObjectHideFlags: 0
@@ -29380,7 +29403,7 @@ Transform:
   m_GameObject: {fileID: 874447705}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.144485, y: 6.1890907, z: -10}
+  m_LocalPosition: {x: 37.965576, y: 6.244274, z: -10}
   m_LocalScale: {x: 1.5334107, y: 1.9014288, z: 1.5334107}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -38055,6 +38078,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: enemyWaves.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -38350,7 +38377,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -71.53
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5864594512237859591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
@@ -38362,7 +38390,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5864594512237859591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 304872072}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4626238268670970564, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 542953231}
   m_SourcePrefab: {fileID: 100100000, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
 --- !u!4 &1487897829 stripped
 Transform:
