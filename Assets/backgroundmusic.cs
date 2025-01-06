@@ -27,4 +27,11 @@ public class BackgroundMusicManager : MonoBehaviour
             Destroy(gameObject); // 如果已经存在一个背景音乐对象，销毁新的实例
         }
     }
+    public void StopMusic()
+    {
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
 }
