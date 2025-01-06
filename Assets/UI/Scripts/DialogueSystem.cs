@@ -45,7 +45,7 @@ public class DialogueSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
-            if (npc != null)
+            if (npc != null&& npc.name == "friend")
             {
                 npc.GetComponent<PlayerMovement>().isControllable = true;
                 player.GetComponent<Player>().isAutoReduceHealth = true;
