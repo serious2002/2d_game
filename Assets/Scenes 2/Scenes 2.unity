@@ -4129,6 +4129,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: enemyWaves.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4436,7 +4440,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5864594512237859591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 827572278}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4626238268670970564, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832371247}
+    - targetCorrespondingSourceObject: {fileID: 4626238268670970564, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832371246}
   m_SourcePrefab: {fileID: 100100000, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
 --- !u!4 &403398740 stripped
 Transform:
@@ -38739,7 +38749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659043397}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45033,6 +45043,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1832371243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626238268670970564, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+  m_PrefabInstance: {fileID: 302241221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1832371246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832371243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05159d68e94b34a47b526b1acfeb8ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rectSize: {x: 5, y: 0.5}
+--- !u!114 &1832371247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832371243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6d14ab29c9bd64b8e2a0ca84ce202c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: []
+  patrolPoints: []
+  enemyWaves:
+  - enemies:
+    - enemyPrefab: {fileID: 415773274532094066, guid: 489036ce46d9e1b4d859bdf83b47e044, type: 3}
+      spawnInterval: 0.5
+      waveEnemyCount: 1
+    - enemyPrefab: {fileID: 415773274532094066, guid: 489036ce46d9e1b4d859bdf83b47e044, type: 3}
+      spawnInterval: 0.5
+      waveEnemyCount: 1
+    - enemyPrefab: {fileID: 415773274532094066, guid: 489036ce46d9e1b4d859bdf83b47e044, type: 3}
+      spawnInterval: 0.5
+      waveEnemyCount: 1
+  currentWaveIndex: 0
+  enemyCount: 0
+  refresh: 1
 --- !u!1 &1862377420
 GameObject:
   m_ObjectHideFlags: 0
