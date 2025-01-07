@@ -19,11 +19,14 @@ public class Success3 : MonoBehaviour
         {
             goal.SetActive(true);
             flag.SetActive(true);
+<<<<<<< Updated upstream
             BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
             if (backgroundMusicManager != null)
             {
                 backgroundMusicManager.StopMusic();
             }
+=======
+>>>>>>> Stashed changes
         }
     }
 }
