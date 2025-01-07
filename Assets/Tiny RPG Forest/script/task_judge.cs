@@ -45,7 +45,7 @@ public class GoalFlag : MonoBehaviour
         // 检查触碰的是否是玩家
         if (collision.CompareTag("Player") && !isTaskCompleted)
         {
-            TaskSuccess(); // 玩家存活并触碰红旗，任务成功
+            //TaskSuccess(); // 玩家存活并触碰红旗，任务成功
         }
     }
 

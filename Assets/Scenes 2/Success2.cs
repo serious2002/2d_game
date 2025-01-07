@@ -50,7 +50,7 @@ public class Success2 : MonoBehaviour
        
             // 实时检测玩家是否被销毁
 
-        if (player == null && !isTaskCompleted)
+        if (player == null )
         {
                 TaskFailed(); // 玩家已被销毁，任务失败
                               //yield return new WaitForSeconds(1f);
@@ -79,7 +79,7 @@ public class Success2 : MonoBehaviour
         taskStyle.normal.textColor = Color.red; // 设置失败为红色
         
         isTaskCompleted = false; // 标记任务已完成
-        SceneManager.LoadScene(scenenamefail);
+        SceneManager.LoadScene(8);
         BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
         if (backgroundMusicManager != null)
         {
