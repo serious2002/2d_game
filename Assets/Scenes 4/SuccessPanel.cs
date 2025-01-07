@@ -8,7 +8,7 @@ public class SuccessPanel : MonoBehaviour
 {
     public GameObject UISuccessPanel;
     public GameObject UIFailPanel;
-
+    private string scenenamefail = "videoSceneFail";
     public Lifebar Lifebar;  //引入Lifebar血条脚本
 
     void Start()
@@ -28,6 +28,7 @@ public class SuccessPanel : MonoBehaviour
         if (Lifebar.sli.value == 0)
         {
             UIFailPanel.SetActive(true);
+            SceneManager.LoadScene(scenenamefail);
         }
     }
 }

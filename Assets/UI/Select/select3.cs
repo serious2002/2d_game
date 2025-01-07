@@ -6,7 +6,7 @@ public class select3 : MonoBehaviour
 {
     public void S3()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(4);
     }
 
 }

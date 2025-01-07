@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 shootDirection;
     Vector2 moveDirection;
     private SpriteRenderer sr;
-    private bool isAttacking = false;
+    //private bool isAttacking = false;
     [Header("射击间隔时间")]
     public float shootInterval = 0.5f;  // 发射子弹的间隔，单位秒
     public bool isMeleeAttack = false;

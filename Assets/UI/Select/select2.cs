@@ -6,7 +6,7 @@ public class select2 : MonoBehaviour
 {
     public void S2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(3);
     }
 
 }
