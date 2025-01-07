@@ -4147,7 +4147,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.744217, y: -6.2685947, z: -10}
+  m_LocalPosition: {x: -50.206932, y: -6.2702465, z: -10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7284,6 +7284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 365498604437179591, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
+      propertyPath: enemyCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4626238268670970564, guid: 1b3146f70645abc409df12815cf403ca, type: 3}
       propertyPath: m_Name
       value: EnemyManager

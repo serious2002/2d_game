@@ -4,53 +4,57 @@ using UnityEngine;
 
 public class Enemy_2 : MonoBehaviour
 {
-    public float moveSpeed = 5f; //      ƶ  ٶ 
-    public Vector2 rectSize = new Vector2(10, 5); //    εĴ С  x Ϊ   ȣ y Ϊ ߶ 
+    public float moveSpeed = 5f; // 控制移动速度
+    public Vector2 rectSize = new Vector2(10, 5); // 矩形的大小, x为宽度, y为高度
     private SpriteRenderer spriteRenderer;
-    private Vector2[] corners; //    ε  ĸ  ǵ 
-    private int currentCornerIndex = 0; //   ǰĿ  ǵ      
+    private Vector2[] corners; // 矩形的四个角点
+    private int currentCornerIndex = 0; // 当前目标角点的索引
 
-    private Vector2 lastMoveDirection = Vector2.zero; //   ¼  һ ε  ƶ     
+    private Vector2 lastMoveDirection = Vector2.zero; // 记录上一次移动的方向
 
-    private eye enemyEye; //    ڿ     Ұ  ת
+    private eye enemyEye; // 敌人的眼睛组件
 
     private void Start()
     {
-        //   ȡ eye           eye    Enemy_2    Ӷ   
+        // 获取 SpriteRenderer 组件
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // 获取 eye 组件
         enemyEye = GetComponentInChildren<eye>();
 
-        //       ε  ĸ  ǵ 
-        Vector2 center = transform.position; //         Ϊ   ˳ ʼλ  
+        // 计算矩形的四个角点
+        Vector2 center = transform.position;
         corners = new Vector2[]
         {
-            center + new Vector2(rectSize.x / 2, rectSize.y / 2), //    Ͻ 
-            center + new Vector2(-rectSize.x / 2, rectSize.y / 2), //    Ͻ 
-            center + new Vector2(-rectSize.x / 2, -rectSize.y / 2), //    ½ 
-            center + new Vector2(rectSize.x / 2, -rectSize.y / 2) //    ½ 
+            center + new Vector2(rectSize.x / 2, rectSize.y / 2), // 右上角
+            center + new Vector2(-rectSize.x / 2, rectSize.y / 2), // 左上角
+            center + new Vector2(-rectSize.x / 2, -rectSize.y / 2), // 左下角
+            center + new Vector2(rectSize.x / 2, -rectSize.y / 2) // 右下角
         };
     }
 
     private void UpdateFacingDirection()
     {
         // 根据目标角点更新角色的朝向
-        if (transform.position.x < corners[currentCornerIndex].x)
+        Vector2 targetPosition = corners[currentCornerIndex];
+        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+
+        if (direction.x > 0) // 向右移动
         {
-            spriteRenderer.flipX = false; // 向左移动时头部向左
+            spriteRenderer.flipX = false; // 朝右
         }
-        else
+        else if (direction.x < 0) // 向左移动
         {
-            spriteRenderer.flipX = true; // 向右移动时头部向右
+            spriteRenderer.flipX = true; // 朝左
         }
     }
 
-
-
     private void Update()
     {
-        //      Move     ʹ     ƾ    ƶ 
+        // 移动敌人
         Move();
 
-        //       Ұ  eye       ƶ     ת
+        // 更新眼睛的方向
         if (enemyEye != null)
         {
             enemyEye.UpdateDirection(lastMoveDirection);
@@ -59,32 +63,22 @@ public class Enemy_2 : MonoBehaviour
 
     private void Move()
     {
-        //   ȡ  ǰĿ  ǵ 
+        // 获取当前目标角点
         Vector2 targetPosition = corners[currentCornerIndex];
 
-        //   ¼     ƶ  ķ   
+        // 计算移动方向
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
         lastMoveDirection = direction;
 
-        // ʹ   Vector2.MoveTowards     ʹ      Ŀ  ǵ  ƶ    ƶ  ٶ Ϊ moveSpeed
+        // 移动敌人
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-
-
+        // 检查是否到达目标角点
         if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
         {
-            //      ˵   Ŀ  ǵ ʱ      Ŀ  ǵ        ʹ  ָ    һ   ǵ 
+            // 更新当前目标角点索引
             currentCornerIndex = (currentCornerIndex + 1) % corners.Length;
-            //if (direction.x > 0) // 向右移动
-            //{
-            //    spriteRenderer.flipX = false; // 朝右
-            //}
-            //else if (direction.x < 0) // 向左移动
-            //{
-            //    spriteRenderer.flipX = true; // 朝左
-            //}
-
-
+            UpdateFacingDirection();
         }
     }
 
@@ -96,3 +90,4 @@ public class Enemy_2 : MonoBehaviour
         }
     }
 }
+

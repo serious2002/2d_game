@@ -51,4 +51,12 @@ public class Enemy_4 : MonoBehaviour
             spriteRenderer.flipX = true; // 向右移动时头部向右
         }
     }
+
+    private void OnDestroy()
+    {
+        if (EnemyManager_4.Instance != null)
+        {
+            EnemyManager_4.Instance.DecreaseEnemyCount();
+        }
+    }
 }
