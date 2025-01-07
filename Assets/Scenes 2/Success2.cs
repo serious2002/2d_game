@@ -89,7 +89,7 @@ public class Success2 : MonoBehaviour
     }
     private void OnGUI()
     {
-        GUI.Label(new Rect(300, 20, 400, 50), $"时间：{(int)Duration}/{LimitedTime}", timeStyle);
+        GUI.Label(new Rect(600, 20, 700, 50), $"时间：{(int)Duration}/{LimitedTime}", timeStyle);
     }
     private void OnGUI1()
     {
