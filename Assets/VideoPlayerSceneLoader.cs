@@ -33,7 +33,7 @@ public class VideoPlayerSceneLoader : MonoBehaviour
     private void Update()
     {
         // 检测任意按键跳过视频
-        if (Input.anyKeyDown)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             SkipVideo();
         }

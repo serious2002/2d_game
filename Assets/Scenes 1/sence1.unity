@@ -58043,6 +58043,10 @@ PrefabInstance:
       propertyPath: scenenamefail
       value: VideoSceneFail
       objectReference: {fileID: 0}
+    - target: {fileID: 2659101716152093592, guid: cad4fcd2c7bcf65458591fdaf4316ce0, type: 3}
+      propertyPath: sceneName
+      value: Scenes 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6610562398177613342, guid: cad4fcd2c7bcf65458591fdaf4316ce0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7

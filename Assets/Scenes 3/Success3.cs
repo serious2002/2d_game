@@ -19,6 +19,11 @@ public class Success3 : MonoBehaviour
         {
             goal.SetActive(true);
             flag.SetActive(true);
+            BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
+            if (backgroundMusicManager != null)
+            {
+                backgroundMusicManager.StopMusic();
+            }
         }
     }
 }

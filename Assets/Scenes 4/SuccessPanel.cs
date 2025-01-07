@@ -22,7 +22,7 @@ public class SuccessPanel : MonoBehaviour
         if (EnemyManager_4.Instance.enemyCount == 0 && EnemyManager_4.Instance.currentWaveIndex >= 2)
         {
             UISuccessPanel.SetActive(true);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(10);
         }
 
         if (Lifebar.sli.value == 0)

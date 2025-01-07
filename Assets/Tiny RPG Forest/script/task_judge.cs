@@ -70,7 +70,11 @@ public class GoalFlag : MonoBehaviour
         showTaskMessage = true;
         isTaskCompleted = true; // 标记任务已完成
         SceneManager.LoadScene(scenenamefail);
-
+        BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
+        if (backgroundMusicManager != null)
+        {
+            backgroundMusicManager.StopMusic();
+        }
         Debug.Log("任务失败！");
     }
 
