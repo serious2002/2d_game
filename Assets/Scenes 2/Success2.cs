@@ -29,10 +29,20 @@ public class Success2 : MonoBehaviour
         if (Duration > LimitedTime || Lifebar.sli.value == 0)  //超时或者死亡游戏结束
         {
             FailFlag.SetActive(true);
+            BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
+            if (backgroundMusicManager != null)
+            {
+                backgroundMusicManager.StopMusic();
+            }
         }
         if (distance<tolerance)//拿到兵力部署图
         {
             SuccessFlag.SetActive(true);
+            BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
+            if (backgroundMusicManager != null)
+            {
+                backgroundMusicManager.StopMusic();
+            }
         }
     }
     private void OnGUI()
