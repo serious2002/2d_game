@@ -57824,7 +57824,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  isAutoReduceHealth: 0
+  isAutoReduceHealth: 1
   healthReductionSpeed: 15
   healthStyle:
     m_Name: 

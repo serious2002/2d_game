@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalFlag : MonoBehaviour
 {
     [Header("玩家引用")]
     public GameObject player; // 玩家对象，需在 Inspector 中拖拽引用
     public bool use_fail = false;
-
+    private string scenenamefail = "videoSceneFail";
     [Header("UI设置")]
     public GUIStyle taskStyle; // 任务结果显示样式
 
@@ -32,7 +33,10 @@ public class GoalFlag : MonoBehaviour
         if (player == null && !isTaskCompleted && use_fail)
             {
                 TaskFailed(); // 玩家已被销毁，任务失败
-            }
+                 //yield return new WaitForSeconds(1f);
+                    // 加载场景
+                 
+        }
         
     }
 
@@ -65,6 +69,7 @@ public class GoalFlag : MonoBehaviour
         taskStyle.normal.textColor = Color.red; // 设置失败为红色
         showTaskMessage = true;
         isTaskCompleted = true; // 标记任务已完成
+        SceneManager.LoadScene(scenenamefail);
 
         Debug.Log("任务失败！");
     }

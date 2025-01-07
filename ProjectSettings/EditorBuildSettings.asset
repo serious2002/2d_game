@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UI/Select/Select.unity
     guid: d4a57242f443a2544a3ad2400dc53406
+  - enabled: 1
+    path: Assets/Scene Transition Test/videoSceneFail.unity
+    guid: ef089872d5095354782296803801cb61
   m_configObjects: {}
