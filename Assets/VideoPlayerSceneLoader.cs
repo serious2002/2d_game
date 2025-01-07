@@ -19,7 +19,26 @@ public class VideoPlayerSceneLoader : MonoBehaviour
 
         // 跳转到指定的场景
         UnityEngine.SceneManagement.SceneManager.LoadScene(targetSceneName);
+
+
+
     }
+
+    private void SkipVideo()
+    {
+        Debug.Log("跳过视频！");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(targetSceneName);
+    }
+
+    private void Update()
+    {
+        // 检测任意按键跳过视频
+        if (Input.anyKeyDown)
+        {
+            SkipVideo();
+        }
+    }
+
 
     private void OnDestroy()
     {

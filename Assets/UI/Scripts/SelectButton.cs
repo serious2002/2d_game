@@ -7,6 +7,6 @@ public class SelectButton : MonoBehaviour
 {
     public void SelectMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(7);
     }
 }

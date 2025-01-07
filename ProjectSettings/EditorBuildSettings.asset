@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene Transition Test/videoSceneFail.unity
     guid: ef089872d5095354782296803801cb61
+  - enabled: 1
+    path: Assets/Scene Transition Test/videoSceneStart.unity
+    guid: 1c1e14615be57174498bf147198ec118
   m_configObjects: {}

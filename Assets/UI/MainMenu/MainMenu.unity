@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1883635984}
   - component: {fileID: 1883635983}
   - component: {fileID: 1883635982}
-  - component: {fileID: 1883635981}
+  - component: {fileID: 1883635985}
   m_Layer: 5
   m_Name: SelectButton
   m_TagString: Untagged
@@ -1111,18 +1111,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -65}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1883635981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883635979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba27825e426ca34aab217833cd25717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1883635982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,9 +1155,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1883635981}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: StartMenu
+      - m_Target: {fileID: 1883635985}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SelectMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1217,6 +1205,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883635979}
   m_CullTransparentMesh: 1
+--- !u!114 &1883635985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883635979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21cd55858733c4409b9f142419cf563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1999298396
 GameObject:
   m_ObjectHideFlags: 0
