@@ -17,12 +17,20 @@ public class Success2 : MonoBehaviour
     public GUIStyle timeStyle;
     private string scenenamefail = "videoSceneFail";
     private bool isTaskCompleted = false;
+    private string taskMessage = "";
+    private bool showTaskMessage = false;
+    public GUIStyle taskStyle;
     void Start()
     {
         timeStyle = new GUIStyle();
         timeStyle.fontSize = 30;
         timeStyle.normal.textColor = Color.black;
         Duration = 0;
+        // 初始化样式
+        taskStyle = new GUIStyle();
+        taskStyle.fontSize = 50;
+        taskStyle.alignment = TextAnchor.MiddleCenter;
+        taskStyle.normal.textColor = Color.red;
     }
 
     // Update is called once per frame
@@ -42,7 +50,7 @@ public class Success2 : MonoBehaviour
        
             // 实时检测玩家是否被销毁
 
-        if (player == null && !isTaskCompleted && use_fail)
+        if (player == null && !isTaskCompleted)
         {
                 TaskFailed(); // 玩家已被销毁，任务失败
                               //yield return new WaitForSeconds(1f);
@@ -67,8 +75,9 @@ public class Success2 : MonoBehaviour
     private void TaskFailed()
     {
         taskMessage = "任务失败！";
-        taskStyle.normal.textColor = Color.red; // 设置失败为红色
         showTaskMessage = true;
+        taskStyle.normal.textColor = Color.red; // 设置失败为红色
+        
         isTaskCompleted = false; // 标记任务已完成
         SceneManager.LoadScene(scenenamefail);
         BackgroundMusicManager backgroundMusicManager = FindObjectOfType<BackgroundMusicManager>();
@@ -81,5 +90,13 @@ public class Success2 : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(300, 20, 400, 50), $"时间：{(int)Duration}/{LimitedTime}", timeStyle);
+    }
+    private void OnGUI1()
+    {
+        if (showTaskMessage)
+        {
+            // 显示任务结果在屏幕中央
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 25, 300, 50), taskMessage, taskStyle);
+        }
     }
 }
