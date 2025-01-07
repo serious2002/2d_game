@@ -46444,7 +46444,7 @@ MonoBehaviour:
   SuccessFlag: {fileID: 1823261964}
   FailFlag: {fileID: 863179868}
   Lifebar: {fileID: 1629546745}
-  LimitedTime: 60
+  LimitedTime: 40
   Duration: 0
   targetPosition: {x: -9.5, y: -3}
   tolerance: 1
